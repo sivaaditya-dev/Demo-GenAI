@@ -1,0 +1,8 @@
+{
+  "name": "VoltTech Electronics Store",
+  "description": "Premier consumer electronics shop with PlayStation 5, Nintendo Switch, flagship smartphones, custom gaming PCs, and high-performance laptops.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

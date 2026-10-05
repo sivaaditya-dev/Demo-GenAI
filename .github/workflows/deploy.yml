@@ -33,6 +33,8 @@ jobs:
 
       - name: Build production app
         run: npm run build
+        env :
+          BASE_URL: /Demo-GenAI/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

@@ -47,10 +47,10 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={onNavigateHome}
             className="flex items-center gap-2 text-left group"
           >
-            <span className="font-display text-2xl font-extrabold tracking-tight text-white group-hover:text-cyan-400 transition-colors">
+            <span className="font-display text-2xl font-extrabold tracking-tight text-white group-hover:text-red-500 transition-colors">
               VoltTech
             </span>
-            <span className="h-1.5 w-1.5 rounded-full bg-cyan-400"></span>
+            <span className="h-2 w-2 rounded-full bg-red-600 shadow-sm shadow-red-600/50"></span>
           </button>
         </div>
 
@@ -63,7 +63,7 @@ export const Header: React.FC<HeaderProps> = ({
             }}
             className={`px-3 py-1.5 rounded-md transition-colors whitespace-nowrap ${
               activeView === 'store' && activeCategory === 'all'
-                ? 'text-cyan-400 font-semibold bg-neutral-900/60'
+                ? 'text-red-500 font-semibold bg-neutral-900/80'
                 : 'hover:text-white hover:bg-neutral-900/40'
             }`}
           >
@@ -76,7 +76,7 @@ export const Header: React.FC<HeaderProps> = ({
             }}
             className={`px-3 py-1.5 rounded-md transition-colors whitespace-nowrap flex items-center gap-1.5 ${
               activeView === 'store' && activeCategory === 'gaming-consoles'
-                ? 'text-cyan-400 font-semibold bg-neutral-900/60'
+                ? 'text-red-500 font-semibold bg-neutral-900/80'
                 : 'hover:text-white hover:bg-neutral-900/40'
             }`}
           >
@@ -90,7 +90,7 @@ export const Header: React.FC<HeaderProps> = ({
             }}
             className={`px-3 py-1.5 rounded-md transition-colors whitespace-nowrap flex items-center gap-1.5 ${
               activeView === 'store' && activeCategory === 'mobiles'
-                ? 'text-cyan-400 font-semibold bg-neutral-900/60'
+                ? 'text-red-500 font-semibold bg-neutral-900/80'
                 : 'hover:text-white hover:bg-neutral-900/40'
             }`}
           >
@@ -104,7 +104,7 @@ export const Header: React.FC<HeaderProps> = ({
             }}
             className={`px-3 py-1.5 rounded-md transition-colors whitespace-nowrap flex items-center gap-1.5 ${
               activeView === 'store' && activeCategory === 'custom-pcs'
-                ? 'text-cyan-400 font-semibold bg-neutral-900/60'
+                ? 'text-red-500 font-semibold bg-neutral-900/80'
                 : 'hover:text-white hover:bg-neutral-900/40'
             }`}
           >
@@ -118,7 +118,7 @@ export const Header: React.FC<HeaderProps> = ({
             }}
             className={`px-3 py-1.5 rounded-md transition-colors whitespace-nowrap flex items-center gap-1.5 ${
               activeView === 'store' && activeCategory === 'laptops'
-                ? 'text-cyan-400 font-semibold bg-neutral-900/60'
+                ? 'text-red-500 font-semibold bg-neutral-900/80'
                 : 'hover:text-white hover:bg-neutral-900/40'
             }`}
           >
@@ -129,11 +129,11 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={onOpenPCBuilder}
             className={`px-3 py-1.5 rounded-md transition-colors whitespace-nowrap flex items-center gap-1.5 ${
               activeView === 'pc-builder'
-                ? 'text-cyan-400 font-semibold bg-neutral-900/60'
-                : 'text-neutral-300 hover:text-cyan-300 hover:bg-neutral-900/40'
+                ? 'text-red-500 font-semibold bg-neutral-900/80'
+                : 'text-neutral-300 hover:text-red-400 hover:bg-neutral-900/40'
             }`}
           >
-            <SlidersHorizontal className="w-3.5 h-3.5 text-cyan-400" />
+            <SlidersHorizontal className="w-3.5 h-3.5 text-red-500" />
             Rig Builder
           </button>
           <button
@@ -154,7 +154,7 @@ export const Header: React.FC<HeaderProps> = ({
               placeholder="Search PS5, RTX 4090, iPhone..."
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
-              className="w-full bg-neutral-900/90 border border-neutral-800 rounded-lg pl-9 pr-3 py-1.5 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-cyan-500 transition-colors"
+              className="w-full bg-neutral-900/90 border border-neutral-800 rounded-lg pl-9 pr-3 py-1.5 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-red-500 transition-colors"
             />
             {searchQuery && (
               <button
@@ -170,12 +170,12 @@ export const Header: React.FC<HeaderProps> = ({
           {compareCount > 0 && (
             <button
               onClick={onOpenCompare}
-              className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium rounded-lg bg-neutral-900 border border-cyan-500/40 text-cyan-300 hover:bg-neutral-800 transition-colors"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium rounded-lg bg-neutral-900 border border-red-500/40 text-red-400 hover:bg-neutral-800 transition-colors"
               title="Compare selected products"
             >
               <Monitor className="w-3.5 h-3.5" />
               <span>Compare</span>
-              <span className="px-1.5 py-0.2 bg-cyan-500/20 text-cyan-300 rounded font-mono text-[10px] font-semibold">
+              <span className="px-1.5 py-0.2 bg-red-600/20 text-red-400 rounded font-mono text-[10px] font-semibold">
                 {compareCount}
               </span>
             </button>
@@ -189,7 +189,7 @@ export const Header: React.FC<HeaderProps> = ({
           >
             <Heart className="w-5 h-5" />
             {wishlistCount > 0 && (
-              <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-rose-500 text-[10px] font-semibold text-white font-mono">
+              <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-600 text-[10px] font-semibold text-white font-mono">
                 {wishlistCount}
               </span>
             )}
@@ -198,15 +198,15 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Cart Button */}
           <button
             onClick={onOpenCart}
-            className="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-cyan-500 text-neutral-950 font-semibold hover:bg-cyan-400 active:scale-[0.98] transition-all text-xs sm:text-sm whitespace-nowrap"
+            className="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-red-600 text-white font-bold hover:bg-red-500 active:scale-[0.98] transition-all text-xs sm:text-sm whitespace-nowrap shadow-md shadow-red-950/40"
           >
-            <ShoppingBag className="w-4 h-4 text-neutral-950" />
+            <ShoppingBag className="w-4 h-4 text-white" />
             <span className="hidden sm:inline">Bag</span>
             <span className="tabular-nums font-mono font-bold">
               ({cartCount})
             </span>
             {cartTotal > 0 && (
-              <span className="hidden md:inline pl-1.5 border-l border-neutral-950/20 tabular-nums font-mono font-medium">
+              <span className="hidden md:inline pl-1.5 border-l border-white/20 tabular-nums font-mono font-medium">
                 ${cartTotal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
               </span>
             )}
@@ -223,7 +223,7 @@ export const Header: React.FC<HeaderProps> = ({
             placeholder="Search PS5, Switch, iPhone, Laptops..."
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
-            className="w-full bg-neutral-900 border border-neutral-800 rounded-lg pl-9 pr-3 py-2 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-cyan-500"
+            className="w-full bg-neutral-900 border border-neutral-800 rounded-lg pl-9 pr-3 py-2 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-red-500"
           />
         </div>
       </div>

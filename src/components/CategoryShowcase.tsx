@@ -53,14 +53,14 @@ export const CategoryShowcase: React.FC<CategoryShowcaseProps> = ({
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <span className="text-xs font-mono text-cyan-400">CURATED DEPARTMENTS</span>
+            <span className="text-xs font-mono text-red-500 font-semibold">CURATED DEPARTMENTS</span>
             <h2 className="font-display text-xl sm:text-2xl font-bold text-white mt-1">
               Select Your Category
             </h2>
           </div>
           <button
             onClick={() => onSelectCategory('all')}
-            className="text-xs font-semibold text-neutral-400 hover:text-cyan-400 transition-colors flex items-center gap-1"
+            className="text-xs font-semibold text-neutral-400 hover:text-red-400 transition-colors flex items-center gap-1"
           >
             <span>View All Hardware</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
@@ -71,7 +71,7 @@ export const CategoryShowcase: React.FC<CategoryShowcaseProps> = ({
           {categories.map((cat) => (
             <div
               key={cat.id}
-              className="group relative rounded-xl overflow-hidden border border-neutral-800/90 bg-neutral-900 transition-all duration-300 hover:border-neutral-700 hover:translate-y-[-2px] flex flex-col"
+              className="group relative rounded-xl overflow-hidden border border-neutral-800/90 bg-neutral-900 transition-all duration-300 hover:border-red-600/40 hover:translate-y-[-2px] flex flex-col"
             >
               {/* Image Container */}
               <div 
@@ -97,10 +97,10 @@ export const CategoryShowcase: React.FC<CategoryShowcaseProps> = ({
                 <div>
                   <h3 
                     onClick={cat.onClick}
-                    className="font-display text-base font-semibold text-white group-hover:text-cyan-400 transition-colors cursor-pointer flex items-center justify-between"
+                    className="font-display text-base font-semibold text-white group-hover:text-red-500 transition-colors cursor-pointer flex items-center justify-between"
                   >
                     <span>{cat.name}</span>
-                    <ArrowUpRight className="w-4 h-4 text-neutral-500 group-hover:text-cyan-400 transition-colors" />
+                    <ArrowUpRight className="w-4 h-4 text-neutral-500 group-hover:text-red-500 transition-colors" />
                   </h3>
                   <p className="text-xs text-neutral-400 mt-1 line-clamp-2">
                     {cat.tagline}
@@ -117,7 +117,7 @@ export const CategoryShowcase: React.FC<CategoryShowcaseProps> = ({
                   {cat.hasRigAction && (
                     <button
                       onClick={onOpenPCBuilder}
-                      className="text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
+                      className="text-xs font-semibold text-red-500 hover:text-red-400 transition-colors"
                     >
                       Build Rig →
                     </button>

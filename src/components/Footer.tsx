@@ -18,28 +18,28 @@ export const Footer: React.FC<FooterProps> = ({
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="flex items-center gap-3">
-              <Truck className="w-5 h-5 text-cyan-400 shrink-0" />
+              <Truck className="w-5 h-5 text-red-500 shrink-0" />
               <div>
                 <h4 className="font-semibold text-white text-xs">Free Express Shipping</h4>
                 <p className="text-[11px] text-neutral-400">On all orders over $300</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <ShieldCheck className="w-5 h-5 text-cyan-400 shrink-0" />
+              <ShieldCheck className="w-5 h-5 text-red-500 shrink-0" />
               <div>
                 <h4 className="font-semibold text-white text-xs">Authorized Warranty</h4>
                 <p className="text-[11px] text-neutral-400">100% Genuine manufacturer seals</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <RotateCcw className="w-5 h-5 text-cyan-400 shrink-0" />
+              <RotateCcw className="w-5 h-5 text-red-500 shrink-0" />
               <div>
                 <h4 className="font-semibold text-white text-xs">30-Day Hassle-Free Return</h4>
                 <p className="text-[11px] text-neutral-400">Zero restocking fees on sealed items</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <Headphones className="w-5 h-5 text-cyan-400 shrink-0" />
+              <Headphones className="w-5 h-5 text-red-500 shrink-0" />
               <div>
                 <h4 className="font-semibold text-white text-xs">Specialist Hardware Support</h4>
                 <p className="text-[11px] text-neutral-400">Direct technician assistance</p>
@@ -58,7 +58,7 @@ export const Footer: React.FC<FooterProps> = ({
               <span className="font-display text-xl font-extrabold tracking-tight text-white">
                 VoltTech
               </span>
-              <span className="h-1.5 w-1.5 rounded-full bg-cyan-400"></span>
+              <span className="h-2 w-2 rounded-full bg-red-600 shadow-sm shadow-red-600/50"></span>
             </div>
             <p className="text-xs text-neutral-400 max-w-sm leading-relaxed">
               Curated boutique store for PlayStation 5, Nintendo Switch, Apple iPhone, Samsung Galaxy, ultra-portable workstation laptops, and artisan custom PC builds.
@@ -156,7 +156,7 @@ export const Footer: React.FC<FooterProps> = ({
               <li>
                 <button
                   onClick={onOpenPCBuilder}
-                  className="hover:text-white transition-colors text-cyan-400 font-semibold"
+                  className="hover:text-red-400 transition-colors text-red-500 font-semibold"
                 >
                   Custom Rig Configurator
                 </button>

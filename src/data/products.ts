@@ -1,12 +1,17 @@
 import { Product } from '../types/electronics';
+import heroImg from '../assets/images/hero_flagship_tech_1791180831756.jpg';
+import gamingConsolesImg from '../assets/images/category_gaming_consoles_1791180842705.jpg';
+import mobilesImg from '../assets/images/category_mobiles_1791180854348.jpg';
+import customPcsImg from '../assets/images/category_custom_pcs_1791180865728.jpg';
+import laptopsImg from '../assets/images/category_laptops_1791180876586.jpg';
 
-// Generated asset paths
+// Generated asset paths bundled by Vite
 export const IMAGES = {
-  hero: '/src/assets/images/hero_flagship_tech_1791180831756.jpg',
-  gamingConsoles: '/src/assets/images/category_gaming_consoles_1791180842705.jpg',
-  mobiles: '/src/assets/images/category_mobiles_1791180854348.jpg',
-  customPcs: '/src/assets/images/category_custom_pcs_1791180865728.jpg',
-  laptops: '/src/assets/images/category_laptops_1791180876586.jpg',
+  hero: heroImg,
+  gamingConsoles: gamingConsolesImg,
+  mobiles: mobilesImg,
+  customPcs: customPcsImg,
+  laptops: laptopsImg,
 };
 
 export const PRODUCTS: Product[] = [

@@ -28,7 +28,7 @@ export const ProductComparisonModal: React.FC<ProductComparisonModalProps> = ({
         {/* Modal Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-neutral-800 bg-neutral-950">
           <div>
-            <span className="text-xs font-mono text-cyan-400">SIDE-BY-SIDE MATRIX</span>
+            <span className="text-xs font-mono text-red-500 font-semibold">SIDE-BY-SIDE MATRIX</span>
             <h2 className="font-display text-xl font-bold text-white">
               Hardware Specification Comparison
             </h2>
@@ -36,7 +36,7 @@ export const ProductComparisonModal: React.FC<ProductComparisonModalProps> = ({
           <div className="flex items-center gap-3">
             <button
               onClick={onClearAll}
-              className="text-xs text-neutral-400 hover:text-rose-400 flex items-center gap-1 transition-colors"
+              className="text-xs text-neutral-400 hover:text-red-400 flex items-center gap-1 transition-colors"
             >
               <Trash2 className="w-3.5 h-3.5" />
               <span>Clear All</span>
@@ -65,7 +65,7 @@ export const ProductComparisonModal: React.FC<ProductComparisonModalProps> = ({
                 <div key={p.id} className="relative p-3 rounded-xl bg-neutral-950/80 border border-neutral-800 flex flex-col justify-between">
                   <button
                     onClick={() => onRemoveProduct(p.id)}
-                    className="absolute top-2 right-2 text-neutral-500 hover:text-rose-400 p-1 rounded-full transition-colors"
+                    className="absolute top-2 right-2 text-neutral-500 hover:text-red-400 p-1 rounded-full transition-colors"
                     title="Remove item"
                   >
                     <X className="w-3.5 h-3.5" />
@@ -81,7 +81,7 @@ export const ProductComparisonModal: React.FC<ProductComparisonModalProps> = ({
                   </div>
 
                   <div>
-                    <span className="text-[10px] font-mono text-cyan-400 uppercase">{p.brand}</span>
+                    <span className="text-[10px] font-mono text-red-500 uppercase font-semibold">{p.brand}</span>
                     <h3 className="font-display text-xs font-semibold text-white line-clamp-2 mt-0.5">
                       {p.name}
                     </h3>
@@ -92,7 +92,7 @@ export const ProductComparisonModal: React.FC<ProductComparisonModalProps> = ({
 
                   <button
                     onClick={() => onAddToCart(p)}
-                    className="mt-3 w-full py-1.5 px-2 rounded-lg bg-cyan-500 text-neutral-950 font-semibold text-xs flex items-center justify-center gap-1.5 hover:bg-cyan-400 transition-colors"
+                    className="mt-3 w-full py-1.5 px-2 rounded-lg bg-red-600 text-white font-bold text-xs flex items-center justify-center gap-1.5 hover:bg-red-500 transition-colors shadow-md shadow-red-950/40"
                   >
                     <ShoppingBag className="w-3.5 h-3.5" />
                     <span>Add to Bag</span>

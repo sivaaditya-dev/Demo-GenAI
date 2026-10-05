@@ -65,7 +65,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
           {/* Header */}
           <div className="p-6 border-b border-neutral-800 flex items-center justify-between bg-neutral-950">
             <div className="flex items-center gap-2">
-              <ShoppingBag className="w-5 h-5 text-cyan-400" />
+              <ShoppingBag className="w-5 h-5 text-red-500" />
               <h2 className="font-display text-lg font-bold text-white">
                 Your Shopping Bag ({items.reduce((acc, i) => acc + i.quantity, 0)})
               </h2>
@@ -93,7 +93,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                 </div>
                 <button
                   onClick={onClose}
-                  className="px-5 py-2.5 rounded-lg bg-cyan-400 text-neutral-950 font-bold text-xs hover:bg-cyan-300 transition-colors"
+                  className="px-5 py-2.5 rounded-lg bg-red-600 text-white font-bold text-xs hover:bg-red-500 transition-colors shadow-md shadow-red-950/40"
                 >
                   Explore Catalog
                 </button>
@@ -128,7 +128,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                           </h4>
                           <button
                             onClick={() => onRemoveItem(item.id)}
-                            className="text-neutral-500 hover:text-rose-400 p-1 transition-colors"
+                            className="text-neutral-500 hover:text-red-400 p-1 transition-colors"
                             title="Remove from bag"
                           >
                             <Trash2 className="w-3.5 h-3.5" />
@@ -136,7 +136,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                         </div>
 
                         {item.selectedVariant && (
-                          <div className="text-[11px] font-mono text-cyan-400 mt-0.5">
+                          <div className="text-[11px] font-mono text-red-400 font-semibold mt-0.5">
                             Edition: {item.selectedVariant.name}
                           </div>
                         )}
@@ -200,7 +200,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                       placeholder="Promo code (e.g. TECH10)"
                       value={promoInput}
                       onChange={(e) => setPromoInput(e.target.value)}
-                      className="w-full bg-neutral-900 border border-neutral-800 rounded-lg pl-8 pr-3 py-1.5 text-xs text-white uppercase placeholder-neutral-500 font-mono focus:outline-none focus:border-cyan-500"
+                      className="w-full bg-neutral-900 border border-neutral-800 rounded-lg pl-8 pr-3 py-1.5 text-xs text-white uppercase placeholder-neutral-500 font-mono focus:outline-none focus:border-red-500"
                     />
                   </div>
                   <button
@@ -211,7 +211,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                   </button>
                 </div>
                 {promoMessage && (
-                  <p className={`text-[11px] font-mono ${promoMessage.success ? 'text-emerald-400' : 'text-rose-400'}`}>
+                  <p className={`text-[11px] font-mono ${promoMessage.success ? 'text-emerald-400' : 'text-red-400'}`}>
                     {promoMessage.text}
                   </p>
                 )}
@@ -243,7 +243,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                 </div>
                 <div className="pt-2 border-t border-neutral-800 flex justify-between items-baseline text-white">
                   <span className="font-bold">Total Amount</span>
-                  <span className="font-mono text-xl font-extrabold text-cyan-400 tabular-nums">
+                  <span className="font-mono text-xl font-extrabold text-red-500 tabular-nums">
                     ${total.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                   </span>
                 </div>
@@ -252,7 +252,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               {/* Checkout Button */}
               <button
                 onClick={onProceedToCheckout}
-                className="w-full py-3.5 rounded-xl bg-cyan-400 hover:bg-cyan-300 text-neutral-950 font-bold text-sm flex items-center justify-center gap-2 active:scale-[0.98] transition-all shadow-lg shadow-cyan-950/40"
+                className="w-full py-3.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-extrabold text-sm flex items-center justify-center gap-2 active:scale-[0.98] transition-all shadow-xl shadow-red-950/50"
               >
                 <span>Proceed to Checkout</span>
                 <ArrowRight className="w-4 h-4" />

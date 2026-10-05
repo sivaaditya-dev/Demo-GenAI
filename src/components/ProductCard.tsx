@@ -26,7 +26,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   return (
     <div
       onClick={() => onSelect(product)}
-      className="group relative flex flex-col rounded-xl border border-neutral-800/90 bg-neutral-900/60 hover:bg-neutral-900 hover:border-neutral-700/90 transition-all duration-300 hover:-translate-y-0.5 cursor-pointer overflow-hidden"
+      className="group relative flex flex-col rounded-xl border border-neutral-800/90 bg-neutral-900/70 hover:bg-neutral-900 hover:border-red-600/50 transition-all duration-300 hover:-translate-y-0.5 cursor-pointer overflow-hidden shadow-lg shadow-black/40"
     >
       {/* Visual Image Container (takes ~65% visual weight) */}
       <div className="relative h-56 sm:h-64 w-full bg-neutral-950 overflow-hidden flex items-center justify-center p-3">
@@ -40,7 +40,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         {/* Subtle top metadata / badge without candy pill styling */}
         <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
           {product.badge ? (
-            <span className="text-[11px] font-mono text-cyan-300 bg-neutral-950/80 backdrop-blur-sm px-2 py-0.5 rounded border border-cyan-900/50">
+            <span className="text-[11px] font-mono text-red-400 bg-neutral-950/90 backdrop-blur-sm px-2 py-0.5 rounded border border-red-900/60 font-semibold">
               {product.badge}
             </span>
           ) : (
@@ -62,7 +62,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             onClick={(e) => onToggleCompare(product, e)}
             className={`p-2 rounded-lg border text-xs transition-colors backdrop-blur-sm ${
               isCompared
-                ? 'bg-cyan-500 text-neutral-950 border-cyan-400 font-semibold'
+                ? 'bg-red-600 text-white border-red-500 font-semibold'
                 : 'bg-neutral-950/80 text-neutral-300 border-neutral-700 hover:text-white hover:border-neutral-500'
             }`}
             title={isCompared ? 'Remove from compare' : 'Add to compare'}
@@ -76,8 +76,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             onClick={(e) => onToggleWishlist(product, e)}
             className={`p-2 rounded-lg border text-xs transition-colors backdrop-blur-sm ${
               isWishlisted
-                ? 'bg-rose-500 text-white border-rose-400'
-                : 'bg-neutral-950/80 text-neutral-300 border-neutral-700 hover:text-rose-400 hover:border-neutral-500'
+                ? 'bg-red-600 text-white border-red-500'
+                : 'bg-neutral-950/80 text-neutral-300 border-neutral-700 hover:text-red-400 hover:border-neutral-500'
             }`}
             title={isWishlisted ? 'Saved to wishlist' : 'Add to wishlist'}
             aria-label="Wishlist"
@@ -107,7 +107,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           </div>
 
           {/* Title */}
-          <h3 className="font-display text-base font-semibold text-white group-hover:text-cyan-400 transition-colors line-clamp-1">
+          <h3 className="font-display text-base font-semibold text-white group-hover:text-red-500 transition-colors line-clamp-1">
             {product.name}
           </h3>
 
@@ -144,10 +144,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
           <button
             onClick={(e) => onAddToCart(product, e)}
-            className={`flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-semibold transition-all ${
+            className={`flex items-center gap-1 px-3.5 py-2 rounded-lg text-xs font-bold transition-all shadow-md ${
               isInCart
                 ? 'bg-neutral-800 text-emerald-400 border border-emerald-500/30'
-                : 'bg-cyan-500 text-neutral-950 hover:bg-cyan-400 active:scale-95'
+                : 'bg-red-600 text-white hover:bg-red-500 active:scale-95 shadow-red-950/40'
             }`}
             title="Add to shopping bag"
           >

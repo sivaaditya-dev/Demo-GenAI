@@ -75,7 +75,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 />
                 
                 {product.badge && (
-                  <div className="absolute top-3 left-3 text-xs font-mono text-cyan-300 bg-neutral-950/90 px-2.5 py-1 rounded border border-cyan-800/50">
+                  <div className="absolute top-3 left-3 text-xs font-mono text-red-400 bg-neutral-950/90 px-2.5 py-1 rounded border border-red-900/60 font-semibold">
                     {product.badge}
                   </div>
                 )}
@@ -84,15 +84,15 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               {/* Trust Callout Badges */}
               <div className="grid grid-cols-3 gap-3 pt-4 border-t border-neutral-800/80 text-xs text-neutral-400">
                 <div className="flex items-center gap-2">
-                  <Truck className="w-4 h-4 text-cyan-400 shrink-0" />
+                  <Truck className="w-4 h-4 text-red-500 shrink-0" />
                   <span>Free Express</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-cyan-400 shrink-0" />
+                  <ShieldCheck className="w-4 h-4 text-red-500 shrink-0" />
                   <span>{product.warrantyMonths}m Warranty</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <RotateCcw className="w-4 h-4 text-cyan-400 shrink-0" />
+                  <RotateCcw className="w-4 h-4 text-red-500 shrink-0" />
                   <span>30-Day Return</span>
                 </div>
               </div>
@@ -104,7 +104,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 onClick={() => onToggleCompare(product)}
                 className={`flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg border transition-colors ${
                   isCompared
-                    ? 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40'
+                    ? 'bg-red-600/20 text-red-400 border-red-500/40'
                     : 'text-neutral-400 hover:text-white border-neutral-800 hover:border-neutral-700'
                 }`}
               >
@@ -116,7 +116,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 onClick={() => onToggleWishlist(product)}
                 className={`flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg border transition-colors ${
                   isWishlisted
-                    ? 'bg-rose-500/20 text-rose-300 border-rose-500/40'
+                    ? 'bg-red-600/20 text-red-400 border-red-500/40'
                     : 'text-neutral-400 hover:text-white border-neutral-800 hover:border-neutral-700'
                 }`}
               >
@@ -179,7 +179,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   onClick={() => setActiveTab('overview')}
                   className={`pb-2 transition-colors border-b-2 ${
                     activeTab === 'overview'
-                      ? 'border-cyan-400 text-cyan-400 font-semibold'
+                      ? 'border-red-500 text-red-500 font-semibold'
                       : 'border-transparent text-neutral-400 hover:text-white'
                   }`}
                 >
@@ -189,7 +189,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   onClick={() => setActiveTab('specs')}
                   className={`pb-2 transition-colors border-b-2 ${
                     activeTab === 'specs'
-                      ? 'border-cyan-400 text-cyan-400 font-semibold'
+                      ? 'border-red-500 text-red-500 font-semibold'
                       : 'border-transparent text-neutral-400 hover:text-white'
                   }`}
                 >
@@ -199,7 +199,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   onClick={() => setActiveTab('reviews')}
                   className={`pb-2 transition-colors border-b-2 ${
                     activeTab === 'reviews'
-                      ? 'border-cyan-400 text-cyan-400 font-semibold'
+                      ? 'border-red-500 text-red-500 font-semibold'
                       : 'border-transparent text-neutral-400 hover:text-white'
                   }`}
                 >
@@ -228,12 +228,12 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                               onClick={() => setSelectedVariant(v)}
                               className={`p-3 rounded-lg border text-left text-xs transition-all flex flex-col justify-between ${
                                 selectedVariant?.id === v.id
-                                  ? 'bg-neutral-800 border-cyan-400 text-white shadow-sm'
+                                  ? 'bg-neutral-800 border-red-500 text-white shadow-sm'
                                   : 'bg-neutral-900/80 border-neutral-800 text-neutral-300 hover:border-neutral-700'
                               }`}
                             >
                               <span className="font-semibold text-neutral-100">{v.name}</span>
-                              <span className="font-mono text-cyan-400 mt-1 tabular-nums">
+                              <span className="font-mono text-red-400 mt-1 tabular-nums font-semibold">
                                 {v.priceDelta > 0
                                   ? `+$${v.priceDelta.toFixed(2)}`
                                   : v.priceDelta < 0
@@ -253,12 +253,12 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                           type="checkbox"
                           checked={addProtection}
                           onChange={(e) => setAddProtection(e.target.checked)}
-                          className="mt-0.5 rounded border-neutral-700 text-cyan-500 focus:ring-cyan-500 bg-neutral-900"
+                          className="mt-0.5 rounded border-neutral-700 text-red-600 focus:ring-red-500 bg-neutral-900"
                         />
                         <div className="text-xs">
                           <div className="flex items-center justify-between">
                             <span className="font-semibold text-white">Add VoltCare 2-Year Full Hardware Coverage</span>
-                            <span className="font-mono text-cyan-400 font-semibold tabular-nums">+${protectionPrice.toFixed(2)}</span>
+                            <span className="font-mono text-red-400 font-bold tabular-nums">+${protectionPrice.toFixed(2)}</span>
                           </div>
                           <p className="text-neutral-400 mt-0.5">
                             Covers accidental spills, screen drops, thermal repasting, and instant priority replacement.
@@ -342,16 +342,16 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 {/* Primary Add to Cart Button */}
                 <button
                   onClick={handleAdd}
-                  className="flex-1 flex items-center justify-center gap-2 py-3 px-6 rounded-lg bg-cyan-400 text-neutral-950 font-bold hover:bg-cyan-300 active:scale-[0.98] transition-all text-sm shadow-lg shadow-cyan-950/40"
+                  className="flex-1 flex items-center justify-center gap-2 py-3 px-6 rounded-lg bg-red-600 text-white font-extrabold hover:bg-red-500 active:scale-[0.98] transition-all text-sm shadow-xl shadow-red-950/50"
                 >
                   {justAdded ? (
                     <>
-                      <Check className="w-4 h-4 text-neutral-950" />
+                      <Check className="w-4 h-4 text-white" />
                       <span>Added to Your Bag</span>
                     </>
                   ) : (
                     <>
-                      <ShoppingBag className="w-4 h-4 text-neutral-950" />
+                      <ShoppingBag className="w-4 h-4 text-white" />
                       <span>
                         Add to Bag · ${( (currentPrice + (addProtection ? protectionPrice : 0)) * quantity ).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                       </span>
@@ -362,7 +362,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
               <div className="flex items-center justify-between text-[11px] text-neutral-400 font-mono">
                 <span className="flex items-center gap-1">
-                  <Info className="w-3.5 h-3.5 text-cyan-400" />
+                  <Info className="w-3.5 h-3.5 text-red-500" />
                   Order within 2h 45m for delivery tomorrow
                 </span>
                 <span>Tax calculated at checkout</span>

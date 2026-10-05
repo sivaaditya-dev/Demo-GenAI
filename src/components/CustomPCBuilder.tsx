@@ -182,9 +182,9 @@ export const CustomPCBuilder: React.FC<CustomPCBuilderProps> = ({
       {/* Studio Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-neutral-800">
         <div>
-          <div className="flex items-center gap-2 text-xs font-mono text-cyan-400">
+          <div className="flex items-center gap-2 text-xs font-mono text-red-500 font-semibold">
             <span>VOLT CUSTOM RIG STUDIO</span>
-            <span aria-hidden="true">·</span>
+            <span aria-hidden="true" className="text-neutral-600">·</span>
             <span className="text-neutral-400">INTERACTIVE HARDWARE WORKBENCH</span>
           </div>
           <h1 className="font-display text-2xl sm:text-4xl font-extrabold text-white mt-1">
@@ -200,19 +200,19 @@ export const CustomPCBuilder: React.FC<CustomPCBuilderProps> = ({
           <span className="text-xs text-neutral-400 font-mono">Quick Presets:</span>
           <button
             onClick={() => loadPreset('sweetspot')}
-            className="px-3 py-1.5 rounded-lg bg-neutral-900 border border-neutral-700 text-xs font-medium text-neutral-200 hover:border-cyan-400 hover:text-cyan-300 transition-colors"
+            className="px-3 py-1.5 rounded-lg bg-neutral-900 border border-neutral-700 text-xs font-medium text-neutral-200 hover:border-red-500 hover:text-red-400 transition-colors"
           >
             Gamers Sweet Spot
           </button>
           <button
             onClick={() => loadPreset('apex')}
-            className="px-3 py-1.5 rounded-lg bg-neutral-900 border border-neutral-700 text-xs font-medium text-neutral-200 hover:border-cyan-400 hover:text-cyan-300 transition-colors"
+            className="px-3 py-1.5 rounded-lg bg-neutral-900 border border-neutral-700 text-xs font-medium text-neutral-200 hover:border-red-500 hover:text-red-400 transition-colors"
           >
             RTX 4090 Apex
           </button>
           <button
             onClick={() => loadPreset('workstation')}
-            className="px-3 py-1.5 rounded-lg bg-neutral-900 border border-neutral-700 text-xs font-medium text-neutral-200 hover:border-cyan-400 hover:text-cyan-300 transition-colors"
+            className="px-3 py-1.5 rounded-lg bg-neutral-900 border border-neutral-700 text-xs font-medium text-neutral-200 hover:border-red-500 hover:text-red-400 transition-colors"
           >
             128GB Workstation
           </button>
@@ -236,7 +236,7 @@ export const CustomPCBuilder: React.FC<CustomPCBuilderProps> = ({
                   onClick={() => setActiveCategoryTab(cat.id)}
                   className={`px-3 py-2 rounded-lg text-xs font-medium whitespace-nowrap transition-all flex flex-col items-start ${
                     isActive
-                      ? 'bg-neutral-800 border border-cyan-400 text-white'
+                      ? 'bg-neutral-850 border border-red-500 text-white'
                       : 'bg-neutral-950 border border-neutral-800 text-neutral-400 hover:text-neutral-200'
                   }`}
                 >
@@ -269,13 +269,13 @@ export const CustomPCBuilder: React.FC<CustomPCBuilderProps> = ({
                     onClick={() => handleSelectComponent(activeCategoryTab, item)}
                     className={`p-4 rounded-xl border cursor-pointer transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4 ${
                       isSelected
-                        ? 'bg-neutral-850 border-cyan-400 shadow-md shadow-cyan-950/30'
+                        ? 'bg-neutral-850 border-red-500 shadow-md shadow-red-950/40'
                         : 'bg-neutral-900/70 border-neutral-800 hover:border-neutral-700 hover:bg-neutral-900'
                     }`}
                   >
                     <div className="space-y-1">
                       <div className="flex items-center gap-2">
-                        <span className="text-[10px] font-mono uppercase text-cyan-400 bg-neutral-950 px-2 py-0.5 rounded border border-neutral-800">
+                        <span className="text-[10px] font-mono uppercase text-red-400 bg-neutral-950 px-2 py-0.5 rounded border border-red-900/50 font-semibold">
                           {item.brand}
                         </span>
                         <h4 className="text-sm font-bold text-white">
@@ -306,7 +306,7 @@ export const CustomPCBuilder: React.FC<CustomPCBuilderProps> = ({
                         type="button"
                         className={`px-3 py-1 rounded text-xs font-semibold font-mono transition-colors ${
                           isSelected
-                            ? 'bg-cyan-400 text-neutral-950'
+                            ? 'bg-red-600 text-white font-bold'
                             : 'bg-neutral-800 text-neutral-300 hover:bg-neutral-700'
                         }`}
                       >
@@ -326,14 +326,14 @@ export const CustomPCBuilder: React.FC<CustomPCBuilderProps> = ({
               id="assembly"
               checked={assemblyService}
               onChange={(e) => setAssemblyService(e.target.checked)}
-              className="mt-1 h-4 w-4 rounded border-neutral-700 text-cyan-500 focus:ring-cyan-500 bg-neutral-950"
+              className="mt-1 h-4 w-4 rounded border-neutral-700 text-red-600 focus:ring-red-500 bg-neutral-950"
             />
             <label htmlFor="assembly" className="text-xs cursor-pointer flex-1">
               <div className="flex items-center justify-between">
                 <span className="font-bold text-white text-sm">
                   VoltCare Custom Lab Assembly & 72-Hour Thermal Stress Testing (+$99.00)
                 </span>
-                <span className="font-mono text-cyan-400 font-bold">$99.00</span>
+                <span className="font-mono text-red-400 font-bold">$99.00</span>
               </div>
               <p className="text-neutral-400 mt-1 leading-relaxed">
                 Includes precision cable routing, custom fan curve calibration, latest BIOS flash, Windows 11 installation with zero bloatware, and individual GPU/CPU Cinebench & 3DMark stress certification reports.
@@ -372,7 +372,7 @@ export const CustomPCBuilder: React.FC<CustomPCBuilderProps> = ({
               <div className="w-full h-2 rounded-full bg-neutral-800 overflow-hidden">
                 <div
                   className={`h-full transition-all duration-300 ${
-                    isPsuAdequate ? 'bg-cyan-400' : 'bg-rose-500'
+                    isPsuAdequate ? 'bg-red-500' : 'bg-rose-500'
                   }`}
                   style={{ width: `${Math.min(100, (totalWattage / (psuWattage || 1)) * 100)}%` }}
                 />
@@ -447,7 +447,7 @@ export const CustomPCBuilder: React.FC<CustomPCBuilderProps> = ({
                 disabled={!compatibilityNotice?.valid}
                 className={`w-full py-3.5 px-4 rounded-xl font-bold flex items-center justify-center gap-2 text-sm transition-all shadow-lg ${
                   compatibilityNotice?.valid
-                    ? 'bg-cyan-400 text-neutral-950 hover:bg-cyan-300 active:scale-[0.98] shadow-cyan-950/40 cursor-pointer'
+                    ? 'bg-red-600 text-white hover:bg-red-500 active:scale-[0.98] shadow-red-950/50 cursor-pointer'
                     : 'bg-neutral-800 text-neutral-500 cursor-not-allowed'
                 }`}
               >

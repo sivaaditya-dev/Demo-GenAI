@@ -75,7 +75,7 @@ export const OrderTrackingModal: React.FC<OrderTrackingModalProps> = ({
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-neutral-800 bg-neutral-950">
           <div className="flex items-center gap-2">
-            <Truck className="w-5 h-5 text-cyan-400" />
+            <Truck className="w-5 h-5 text-red-500" />
             <h2 className="font-display text-lg font-bold text-white">
               Shipment Tracking & Logistics
             </h2>
@@ -98,12 +98,12 @@ export const OrderTrackingModal: React.FC<OrderTrackingModalProps> = ({
                 placeholder="Enter Order ID (e.g. VT-123456) or Tracking Number"
                 value={searchId}
                 onChange={(e) => setSearchId(e.target.value)}
-                className="w-full bg-neutral-950 border border-neutral-800 rounded-lg pl-9 pr-3 py-2 text-xs text-white uppercase font-mono placeholder-neutral-500 focus:outline-none focus:border-cyan-500"
+                className="w-full bg-neutral-950 border border-neutral-800 rounded-lg pl-9 pr-3 py-2 text-xs text-white uppercase font-mono placeholder-neutral-500 focus:outline-none focus:border-red-500"
               />
             </div>
             <button
               type="submit"
-              className="px-4 py-2 bg-cyan-400 hover:bg-cyan-300 text-neutral-950 rounded-lg text-xs font-bold transition-colors"
+              className="px-4 py-2 bg-red-600 hover:bg-red-500 text-white rounded-lg text-xs font-bold transition-colors shadow-md shadow-red-950/40"
             >
               Track
             </button>
@@ -117,7 +117,7 @@ export const OrderTrackingModal: React.FC<OrderTrackingModalProps> = ({
                   <div className="flex items-center gap-2 font-mono">
                     <span className="text-white font-bold text-sm">{selectedOrder.id}</span>
                     <span className="text-neutral-500">·</span>
-                    <span className="text-cyan-400">{selectedOrder.trackingNumber}</span>
+                    <span className="text-red-400 font-semibold">{selectedOrder.trackingNumber}</span>
                   </div>
                   <p className="text-neutral-400 mt-0.5">
                     Carrier: FedEx Priority Express Overnight
@@ -146,11 +146,11 @@ export const OrderTrackingModal: React.FC<OrderTrackingModalProps> = ({
                       <div
                         className={`absolute -left-[31px] top-0 h-4 w-4 rounded-full border-2 flex items-center justify-center ${
                           step.done
-                            ? 'bg-cyan-500 border-cyan-400 text-neutral-950'
+                            ? 'bg-red-600 border-red-500 text-white'
                             : 'bg-neutral-900 border-neutral-700'
                         }`}
                       >
-                        {step.done && <CheckCircle2 className="w-3 h-3 fill-current text-neutral-950" />}
+                        {step.done && <CheckCircle2 className="w-3 h-3 fill-current text-white" />}
                       </div>
                       <div className="text-xs">
                         <div className={`font-semibold ${step.done ? 'text-white' : 'text-neutral-500'}`}>
@@ -165,7 +165,7 @@ export const OrderTrackingModal: React.FC<OrderTrackingModalProps> = ({
 
               {/* Shipping Destination */}
               <div className="p-3.5 rounded-xl bg-neutral-950 border border-neutral-800 text-xs flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
                 <div>
                   <span className="font-semibold text-white block">Delivery Destination:</span>
                   <span className="text-neutral-400">

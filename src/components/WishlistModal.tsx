@@ -28,7 +28,7 @@ export const WishlistModal: React.FC<WishlistModalProps> = ({
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-neutral-800 bg-neutral-950">
           <div className="flex items-center gap-2">
-            <Heart className="w-5 h-5 text-rose-500 fill-current" />
+            <Heart className="w-5 h-5 text-red-500 fill-current" />
             <h2 className="font-display text-lg font-bold text-white">
               Saved Wishlist ({wishlist.length})
             </h2>
@@ -69,7 +69,7 @@ export const WishlistModal: React.FC<WishlistModalProps> = ({
                     />
                   </div>
                   <div className="min-w-0">
-                    <span className="text-[10px] font-mono text-cyan-400 uppercase">{product.brand}</span>
+                    <span className="text-[10px] font-mono text-red-500 uppercase font-semibold">{product.brand}</span>
                     <h4 className="text-xs sm:text-sm font-bold text-white truncate">{product.name}</h4>
                     <span className="font-mono text-xs font-semibold text-neutral-300 tabular-nums">
                       ${product.price.toFixed(2)}
@@ -83,14 +83,14 @@ export const WishlistModal: React.FC<WishlistModalProps> = ({
                       onAddToCart(product);
                       onRemoveFromWishlist(product.id);
                     }}
-                    className="px-3 py-1.5 rounded-lg bg-cyan-400 text-neutral-950 font-bold text-xs flex items-center gap-1 hover:bg-cyan-300 transition-colors"
+                    className="px-3.5 py-1.5 rounded-lg bg-red-600 text-white font-bold text-xs flex items-center gap-1.5 hover:bg-red-500 transition-colors shadow-md shadow-red-950/40"
                   >
                     <ShoppingBag className="w-3.5 h-3.5" />
                     <span className="hidden sm:inline">Move to Bag</span>
                   </button>
                   <button
                     onClick={() => onRemoveFromWishlist(product.id)}
-                    className="p-2 rounded-lg text-neutral-500 hover:text-rose-400 border border-neutral-800 hover:border-neutral-700 transition-colors"
+                    className="p-2 rounded-lg text-neutral-500 hover:text-red-400 border border-neutral-800 hover:border-neutral-700 transition-colors"
                     title="Remove from wishlist"
                   >
                     <Trash2 className="w-4 h-4" />

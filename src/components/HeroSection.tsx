@@ -19,9 +19,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           {/* Left Column: Editorial Headline & Value Propositions */}
           <div className="lg:col-span-7 flex flex-col justify-center space-y-6">
             {/* Quiet 1-line text kicker without pill boxes */}
-            <div className="flex items-center gap-2 text-xs font-mono tracking-wider text-cyan-400">
+            <div className="flex items-center gap-2 text-xs font-mono tracking-wider text-red-500 font-semibold">
               <span>VOLTTECH ENTERPRISE ELECTRONICS</span>
-              <span aria-hidden="true">·</span>
+              <span aria-hidden="true" className="text-neutral-600">·</span>
               <span className="text-neutral-400">NEXT-GEN HARDWARE</span>
             </div>
 
@@ -39,16 +39,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <button
                 onClick={onExploreCatalog}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-cyan-400 text-neutral-950 font-semibold hover:bg-cyan-300 active:scale-[0.98] transition-all text-sm shadow-lg shadow-cyan-950/40"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-red-600 text-white font-bold hover:bg-red-500 active:scale-[0.98] transition-all text-sm shadow-xl shadow-red-950/60"
               >
                 <span>Shop Entire Catalog</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
               <button
                 onClick={onOpenPCBuilder}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-neutral-900 border border-neutral-700/80 text-white font-medium hover:border-neutral-500 hover:bg-neutral-800/60 active:scale-[0.98] transition-all text-sm"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-neutral-900 border border-neutral-700/80 text-white font-medium hover:border-red-500 hover:text-red-400 hover:bg-neutral-850 active:scale-[0.98] transition-all text-sm"
               >
-                <SlidersHorizontal className="w-4 h-4 text-cyan-400" />
+                <SlidersHorizontal className="w-4 h-4 text-red-500" />
                 <span>Custom Rig Builder</span>
               </button>
             </div>
@@ -94,7 +94,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               {/* Subtle overlay caption */}
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-neutral-300">
                 <span className="font-medium text-white">PlayStation 5 Pro & Flagship Mobile Series</span>
-                <span className="font-mono text-cyan-400 tabular-nums">IN STOCK 2026</span>
+                <span className="font-mono text-red-500 font-bold tabular-nums">IN STOCK 2026</span>
               </div>
             </div>
           </div>

@@ -258,12 +258,12 @@ export default function App() {
   }, 0);
 
   return (
-    <div className="min-h-screen flex flex-col bg-neutral-950 text-neutral-100 selection:bg-cyan-500/30 selection:text-cyan-200">
+    <div className="min-h-screen flex flex-col bg-black text-white selection:bg-red-600 selection:text-white">
       
       {/* Toast Notification */}
       {toastMessage && (
         <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-3 rounded-xl bg-neutral-900 border border-neutral-700 text-white text-xs font-mono shadow-2xl animate-fade-in">
-          <Check className="w-4 h-4 text-cyan-400" />
+          <Check className="w-4 h-4 text-red-500" />
           <span>{toastMessage}</span>
         </div>
       )}
@@ -337,7 +337,7 @@ export default function App() {
               <div className="flex flex-col gap-4 border-b border-neutral-800 pb-5">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div>
-                    <span className="text-xs font-mono text-cyan-400">HARDWARE VAULT</span>
+                    <span className="text-xs font-mono text-red-500 font-semibold">HARDWARE VAULT</span>
                     <h2 className="font-display text-2xl font-bold text-white tracking-tight">
                       {activeCategory === 'all'
                         ? 'Full Hardware Catalog'
@@ -354,9 +354,9 @@ export default function App() {
                   {/* Rig Configurator Button */}
                   <button
                     onClick={() => setActiveView('pc-builder')}
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-neutral-900 border border-neutral-700 hover:border-cyan-400 text-xs font-semibold text-neutral-200 hover:text-white transition-colors"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-neutral-900 border border-neutral-700 hover:border-red-500 text-xs font-semibold text-neutral-200 hover:text-white transition-colors"
                   >
-                    <SlidersHorizontal className="w-3.5 h-3.5 text-cyan-400" />
+                    <SlidersHorizontal className="w-3.5 h-3.5 text-red-500" />
                     <span>Launch Custom Rig Studio</span>
                   </button>
                 </div>
@@ -375,7 +375,7 @@ export default function App() {
                       onClick={() => setActiveCategory(cat.id as CategoryId)}
                       className={`px-3.5 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
                         activeCategory === cat.id
-                          ? 'bg-cyan-500 text-neutral-950 font-bold'
+                          ? 'bg-red-600 text-white font-bold shadow-md shadow-red-950/50'
                           : 'bg-neutral-900 text-neutral-400 hover:text-white hover:bg-neutral-800'
                       }`}
                     >
@@ -395,7 +395,7 @@ export default function App() {
                         onClick={() => setSelectedBrand(brand)}
                         className={`px-2.5 py-1 rounded text-xs transition-colors shrink-0 ${
                           selectedBrand === brand
-                            ? 'bg-neutral-800 text-cyan-300 border border-neutral-700 font-medium'
+                            ? 'bg-neutral-850 text-red-400 border border-red-900/60 font-semibold'
                             : 'text-neutral-400 hover:text-white hover:bg-neutral-900'
                         }`}
                       >
@@ -411,7 +411,7 @@ export default function App() {
                         type="checkbox"
                         checked={inStockOnly}
                         onChange={(e) => setInStockOnly(e.target.checked)}
-                        className="rounded border-neutral-700 bg-neutral-900 text-cyan-500 focus:ring-cyan-500"
+                        className="rounded border-neutral-700 bg-neutral-900 text-red-600 focus:ring-red-500"
                       />
                       <span>In Stock Only</span>
                     </label>
@@ -421,7 +421,7 @@ export default function App() {
                       <select
                         value={sortBy}
                         onChange={(e) => setSortBy(e.target.value as any)}
-                        className="bg-neutral-900 border border-neutral-800 rounded-lg px-2.5 py-1 text-xs text-white focus:outline-none focus:border-cyan-500"
+                        className="bg-neutral-900 border border-neutral-800 rounded-lg px-2.5 py-1 text-xs text-white focus:outline-none focus:border-red-500"
                       >
                         <option value="featured">Featured</option>
                         <option value="price-asc">Price: Low to High</option>
@@ -444,7 +444,7 @@ export default function App() {
                       setInStockOnly(false);
                       setSearchQuery('');
                     }}
-                    className="text-cyan-400 hover:underline"
+                    className="text-red-500 hover:underline font-semibold"
                   >
                     Reset Active Filters
                   </button>
@@ -462,7 +462,7 @@ export default function App() {
                       setSearchQuery('');
                       setInStockOnly(false);
                     }}
-                    className="px-4 py-2 rounded-lg bg-cyan-400 text-neutral-950 font-bold text-xs hover:bg-cyan-300"
+                    className="px-4 py-2 rounded-lg bg-red-600 text-white font-bold text-xs hover:bg-red-500 shadow-md shadow-red-950/40"
                   >
                     View All Products
                   </button>
